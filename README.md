@@ -1,16 +1,33 @@
-# basketlive
+# BasketBall Live Score App
 
-A new Flutter project.
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+### Features:
 
-A few resources to get you started if this is your first Flutter project:
+    - Daily Score
+    - Match Lineup
+    - Statistics
+    
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Application Uses:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+    Database                  : Rapid API
+    Language                  : Dart
+    Tools                     : Android Studio
+  
+
+### Functionalities app consists:
+
+    -=Carasoul slider
+    -Listview
+    -Spinkit
+    -Flutter SVG
+    -HTTP
+
+## ScreenShots
+App Intro                  |           
+:-------------------------:
+![Entry Steps]([https://github.com/Rakibul66/Recipe-App/blob/main/Screenshots/1615796511418.png](https://raw.githubusercontent.com/Rakibul66/basketball-live-/main/Screenshot_20240217-193419.jpg)https://raw.githubusercontent.com/Rakibul66/basketball-live-/main/Screenshot_20240217-193419.jpg)
+
+
+
