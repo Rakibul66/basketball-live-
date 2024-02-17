@@ -21,6 +21,6 @@
 - HTTP
 
 ## ScreenShots
-App Intro |
-:-------------------------:
-![Entry Steps](https://raw.githubusercontent.com/Rakibul66/basketball-live-/main/Screenshot_20240217-193419.jpg)
+App Intro (300px) | App Intro (600px)
+:-------------------------:|:-------------------------:
+<img src="https://raw.githubusercontent.com/Rakibul66/basketball-live-/main/Screenshot_20240217-193419.jpg" width="300"> | <img src="https://raw.githubusercontent.com/Rakibul66/basketball-live-/main/Screenshot_20240217-193419.jpg" width="600">
