@@ -23,4 +23,4 @@
 ## ScreenShots
 App Intro (300px) | App Intro (600px)
 :-------------------------:|:-------------------------:
-<img src="<img src="[https://raw.githubusercontent.com/Rakibul66/basketball-live-/main/Screenshot_20240217-193419.jpg](https://raw.githubusercontent.com/Rakibul66/fitn/main/Scene%2021.png?token=GHSAT0AAAAAACMZUZU3LIWYM363UDHWP7OKZORD3JA)https://raw.githubusercontent.com/Rakibul66/fitn/main/Scene%2021.png?token=GHSAT0AAAAAACMZUZU3LIWYM363UDHWP7OKZORD3JA" width="300"> " width="300"> 
+<img src="https://raw.githubusercontent.com/Rakibul66/basketball-live-/main/Screenshot_20240217-193419.jpg " width="300"> 
