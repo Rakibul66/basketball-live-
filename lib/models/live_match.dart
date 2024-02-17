@@ -1,88 +1,86 @@
+import 'dart:convert';
+import 'package:http/http.dart' as http;
+
 class LiveMatch {
-  final int awayScore;
+  final int? awayScore;
   final String awayTeam;
-  final int homeScore;
+  final int? homeScore;
   final String homeTeam;
-  final double initialAwayOdd;
-  final double initialHomeOdd;
+  final double? initialAwayOdd;
+  final double? initialHomeOdd;
   final String league;
-  final int leagueId;
-  final double liveAwayOdd;
-  final double liveHomeOdd;
+  final int? leagueId;
+  final double? liveAwayOdd;
+  final double? liveHomeOdd;
   final String matchId;
-  final int period1Away;
-  final int period1Home;
-  final int period2Away;
-  final int period2Home;
-  final int period3Away;
-  final int period3Home;
+  final int? period1Away;
+  final int? period1Home;
+  final int? period2Away;
+  final int? period2Home;
+  final int? period3Away;
+  final int? period3Home;
   final String status;
 
   LiveMatch({
-    required this.awayScore,
+    this.awayScore,
     required this.awayTeam,
-    required this.homeScore,
+    this.homeScore,
     required this.homeTeam,
-    required this.initialAwayOdd,
-    required this.initialHomeOdd,
+    this.initialAwayOdd,
+    this.initialHomeOdd,
     required this.league,
-    required this.leagueId,
-    required this.liveAwayOdd,
-    required this.liveHomeOdd,
+    this.leagueId,
+    this.liveAwayOdd,
+    this.liveHomeOdd,
     required this.matchId,
-    required this.period1Away,
-    required this.period1Home,
-    required this.period2Away,
-    required this.period2Home,
-    required this.period3Away,
-    required this.period3Home,
+    this.period1Away,
+    this.period1Home,
+    this.period2Away,
+    this.period2Home,
+    this.period3Away,
+    this.period3Home,
     required this.status,
   });
 
   factory LiveMatch.fromJson(Map<String, dynamic> json) {
-    try {
-      return LiveMatch(
-        awayScore: int.parse(json['Away Score'].toString()) ?? 0,
-        awayTeam: json['Away Team'] ?? '',
-        homeScore: int.parse(json['Home Score'].toString()) ?? 0,
-        homeTeam: json['Home Team'] ?? '',
-        initialAwayOdd: double.parse(json['Initial Away Odd'].toString()) ?? 0.0,
-        initialHomeOdd: double.parse(json['Initial Home Odd'].toString()) ?? 0.0,
-        league: json['League'] ?? '',
-        leagueId: int.parse(json['League ID'].toString()) ?? 0,
-        liveAwayOdd: double.parse(json['Live Away Odd'].toString()) ?? 0.0,
-        liveHomeOdd: double.parse(json['Live Home Odd'].toString()) ?? 0.0,
-        matchId: json['Match ID'] ?? '',
-        period1Away: int.tryParse(json['Period 1 Away'].toString()) ?? 0,
-        period1Home: int.tryParse(json['Period 1 Home'].toString()) ?? 0,
-        period2Away: int.tryParse(json['Period 2 Away'].toString()) ?? 0,
-        period2Home: int.tryParse(json['Period 2 Home'].toString()) ?? 0,
-        period3Away: int.tryParse(json['Period 3 Away'].toString()) ?? 0,
-        period3Home: int.tryParse(json['Period 3 Home'].toString()) ?? 0,
-        status: json['Status'] ?? '',
-      );
-    } catch (e) {
-      print('Error parsing JSON: $e');
-      return LiveMatch(
-        awayScore: 0,
-        awayTeam: '',
-        homeScore: 0,
-        homeTeam: '',
-        initialAwayOdd: 0.0,
-        initialHomeOdd: 0.0,
-        league: '',
-        leagueId: 0,
-        liveAwayOdd: 0.0,
-        liveHomeOdd: 0.0,
-        matchId: '',
-        period1Away: 0,
-        period1Home: 0,
-        period2Away: 0,
-        period2Home: 0,
-        period3Away: 0,
-        period3Home: 0,
-        status: '',
-      );
-    }
+    final int? awayScore = json['Away Score'] != null ? int.tryParse(json['Away Score'].toString()) : null;
+    final String awayTeam = json['Away Team'] ?? '';
+    final int? homeScore = json['Home Score'] != null ? int.tryParse(json['Home Score'].toString()) : null;
+    final String homeTeam = json['Home Team'] ?? '';
+    final double? initialAwayOdd = json['Initial Away Odd'] != null ? double.tryParse(json['Initial Away Odd'].toString()) : null;
+    final double? initialHomeOdd = json['Initial Home Odd'] != null ? double.tryParse(json['Initial Home Odd'].toString()) : null;
+    final String league = json['League'] ?? '';
+    final int? leagueId = json['League ID'] != null ? int.tryParse(json['League ID'].toString()) : null;
+    final double? liveAwayOdd = json['Live Away Odd'] != null ? double.tryParse(json['Live Away Odd'].toString()) : null;
+    final double? liveHomeOdd = json['Live Home Odd'] != null ? double.tryParse(json['Live Home Odd'].toString()) : null;
+    final String matchId = json['Match ID'] ?? '';
+    final int? period1Away = json['Period 1 Away'] != null ? int.tryParse(json['Period 1 Away'].toString()) : null;
+    final int? period1Home = json['Period 1 Home'] != null ? int.tryParse(json['Period 1 Home'].toString()) : null;
+    final int? period2Away = json['Period 2 Away'] != null ? int.tryParse(json['Period 2 Away'].toString()) : null;
+    final int? period2Home = json['Period 2 Home'] != null ? int.tryParse(json['Period 2 Home'].toString()) : null;
+    final int? period3Away = json['Period 3 Away'] != null ? int.tryParse(json['Period 3 Away'].toString()) : null;
+    final int? period3Home = json['Period 3 Home'] != null ? int.tryParse(json['Period 3 Home'].toString()) : null;
+    final String status = json['Status'] ?? '';
+
+    return LiveMatch(
+      awayScore: awayScore,
+      awayTeam: awayTeam,
+      homeScore: homeScore,
+      homeTeam: homeTeam,
+      initialAwayOdd: initialAwayOdd,
+      initialHomeOdd: initialHomeOdd,
+      league: league,
+      leagueId: leagueId,
+      liveAwayOdd: liveAwayOdd,
+      liveHomeOdd: liveHomeOdd,
+      matchId: matchId,
+      period1Away: period1Away,
+      period1Home: period1Home,
+      period2Away: period2Away,
+      period2Home: period2Home,
+      period3Away: period3Away,
+      period3Home: period3Home,
+      status: status,
+    );
   }
 }

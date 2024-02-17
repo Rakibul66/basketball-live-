@@ -11,11 +11,14 @@ class ApiService {
 
     if (response.statusCode == 200) {
       final List<dynamic> jsonList = json.decode(response.body)['matches'];
-      return jsonList.map((json) => LiveMatch.fromJson(json)).toList();
+      List<LiveMatch> liveMatches = jsonList.map((json) => LiveMatch.fromJson(json)).toList();
+      print('Live Match List Response: $liveMatches'); // Add print statement here
+      return liveMatches;
     } else {
       throw Exception('Failed to load live matches');
     }
-  }
+
+}
 
   static Future<MatchLineup> getMatchLineups(String matchId) async {
     final Uri url = Uri.parse('${ApiConstants.baseUrl}/basketball/match_lineups/$matchId');
